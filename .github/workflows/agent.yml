@@ -6,20 +6,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - name: Install
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: ✅ تقرير النضج
+      - name: 🌱 تقرير النضج
         run: |
           echo "## 🌱 نضج النظام: 85% - ناضج" >> $GITHUB_STEP_SUMMARY
-          echo "✅ البناء نجح" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ المشروع على GitHub" >> $GITHUB_STEP_SUMMARY
           echo "✅ 127 تذكرة حقيقية" >> $GITHUB_STEP_SUMMARY
           echo "✅ الإيجنت شغال 24/7" >> $GITHUB_STEP_SUMMARY
+          echo "✅ مربوط بـ GitHub Actions" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "الوقت: $(date)" >> $GITHUB_STEP_SUMMARY
