@@ -8,6 +8,8 @@ import Reports from './pages/Reports'
 import Users from './pages/Users'
 import SystemTests from './pages/SystemTests-Admin'
 import SystemMaturity from './pages/SystemMaturity'
+import { supervisoryAgent } from './agent/autoAgent.js';
+// هذا السطر يشغل الحارس تلقائياً
 
 export default function App(){
   return (
@@ -24,6 +26,7 @@ export default function App(){
         <Route path="/agent" element={<AgentMonitor />} />
         <Route path="/ai-demo" element={<Dashboard />} />
         <Route path="*" element={<div style={{ padding: '40px', textAlign: 'center' }}><h2>الصفحة غير موجودة</h2><a href="/dashboard">العودة للرئيسية</a></div>} />
+        
       </Routes>
     </BrowserRouter>
   )
