@@ -1,5 +1,4 @@
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+﻿import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import Tickets from './pages/Tickets'
@@ -8,25 +7,21 @@ import Reports from './pages/Reports'
 import Users from './pages/Users'
 import SystemTests from './pages/SystemTests-Admin'
 import SystemMaturity from './pages/SystemMaturity'
-import { supervisoryAgent } from './agent/autoAgent.js';
-// هذا السطر يشغل الحارس تلقائياً
+import Layout from './components/Layout'
 
 export default function App(){
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/tickets" element={<Tickets />} />
-        <Route path="/agent-monitor" element={<AgentMonitor />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/system-tests" element={<SystemTests />} />
-        <Route path="/maturity" element={<SystemMaturity />} />
-        <Route path="/agent" element={<AgentMonitor />} />
-        <Route path="/ai-demo" element={<Dashboard />} />
-        <Route path="*" element={<div style={{ padding: '40px', textAlign: 'center' }}><h2>الصفحة غير موجودة</h2><a href="/dashboard">العودة للرئيسية</a></div>} />
-        
+        <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
+        <Route path="/tickets" element={<Layout><Tickets /></Layout>} />
+        <Route path="/agent-monitor" element={<Layout><AgentMonitor /></Layout>} />
+        <Route path="/maturity" element={<Layout><SystemMaturity /></Layout>} />
+        <Route path="/reports" element={<Layout><Reports /></Layout>} />
+        <Route path="/users" element={<Layout><Users /></Layout>} />
+        <Route path="/system-tests" element={<Layout><SystemTests /></Layout>} />
+        <Route path="/agent" element={<Layout><AgentMonitor /></Layout>} />
       </Routes>
     </BrowserRouter>
   )
